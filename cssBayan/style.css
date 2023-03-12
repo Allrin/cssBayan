@@ -17,17 +17,27 @@ input[type='radio'] {
     display: none;
 }
 
-.bayan {
-}
-
 .container {
     margin: 0 auto;
     max-width: 1080px;
     padding: 0 15px;
 }
 
+.container:hover {
+    cursor: pointer;
+}
+
+.container:hover .tab__title {
+    color: black;
+}
+
+.container:hover svg {
+    display: block;
+}
+
 .bayan__title {
     font-size: 4rem;
+    border-bottom: 5px solid rgb(139, 140, 172);
 }
 
 .tab__title {
@@ -39,10 +49,11 @@ input[type='radio'] {
     font-weight: 600;
     padding: 17px 0 0 0;
     border-bottom: 5px solid rgb(139, 140, 172);
+    cursor: pointer;
 }
 
-svg path {
-    fill: blue;
+svg {
+    display: none;
 }
 
 .tab__title:hover ~ .content {
@@ -51,11 +62,17 @@ svg path {
 
 .tab__title:hover svg {
     transform: rotate(45deg);
+    transition-duration: 1s;
 }
 
-input:checked ~ .tab__title > svg { 
+input:checked ~ .tab__title > svg {
     transform: rotate(45deg);
-} 
+    transition-duration: 1s;
+}
+
+input:checked ~ .tab__title {
+    color: black;
+}
 
 input:checked ~ .content {
     display: block;
@@ -65,6 +82,7 @@ input:checked ~ .content {
     padding: 30px 0;
     width: 60%;
     margin: 0 auto;
+    animation: show 1s 1;
 }
 
 .content_img {
@@ -75,4 +93,14 @@ input:checked ~ .content {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100%;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
