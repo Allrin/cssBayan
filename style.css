@@ -13,13 +13,13 @@ input[type='radio'] {
     display: none;
 }
 
-.content {
-    display: none;
+.bayan {
+    padding: 30px 0;
 }
 
 .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1080px;
     padding: 0 15px;
 }
 
@@ -60,7 +60,7 @@ input[type='radio'] {
 
 .tab__title {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: space-between;
     font-size: 2rem;
     color: blue;
@@ -93,7 +93,7 @@ svg {
     display: block;
 }
 
-.tab__title:hover svg {
+.tab:hover svg {
     transform: rotate(45deg);
     transition-duration: 1s;
 }
@@ -112,10 +112,15 @@ input:checked ~ .content {
 }
 
 .content {
+    display: none;
     padding: 30px 0;
     width: 60%;
     margin: 0 auto;
     animation: show 1s 1;
+}
+
+.tab:hover > .content {
+    display: block;
 }
 
 @media (max-width: 820px) {
@@ -131,7 +136,6 @@ input:checked ~ .content {
         padding: 15px 0;
     }
 }
-
 
 .content_img {
     display: block;
